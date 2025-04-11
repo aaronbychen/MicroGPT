@@ -218,7 +218,7 @@ torch.set_float32_matmul_precision('high')
 
 model = GPT(GPTConfig())
 model.to('cuda')
-# model = torch.compile(model) # require enough SMs
+model = torch.compile(model) # require enough SMs
 
 import time
 
