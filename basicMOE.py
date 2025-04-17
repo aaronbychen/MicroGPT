@@ -1,5 +1,6 @@
 
 class BasicMOE(nn.Module):
+    
     def __init__(self, feature_in, feature_out, expert_number):
         super().__init__()
         self.experts = nn.ModuleList(
@@ -8,6 +9,7 @@ class BasicMOE(nn.Module):
             ]
         )
         self.gate = nn.Linear(feature_in, expert_number)
+
     
     def forward(self, x):
         expert_weight = self.gate(x)
